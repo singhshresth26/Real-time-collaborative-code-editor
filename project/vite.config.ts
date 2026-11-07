@@ -7,8 +7,14 @@ import path from 'path'
 export default defineConfig({
   server: {
     host: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+    },
   },
-  plugins: [react(),tailwindcss(),],
+  plugins: [react(), tailwindcss()],
   build: {
     outDir: path.resolve(__dirname, '../backend/build'),
     emptyOutDir: true,

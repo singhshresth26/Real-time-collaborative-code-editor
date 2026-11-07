@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+/* Sleek dark scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Collaborative peer cursor animations and styles */
+@keyframes peer-cursor-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.cm-peer-cursor-caret {
+  animation: peer-cursor-pulse 1.2s ease-in-out infinite;
+}
+
+.cm-peer-selection {
+  border-radius: 2px;
+}
