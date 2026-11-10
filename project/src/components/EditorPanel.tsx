@@ -458,25 +458,25 @@ export default function EditorPanel({
   const languageLabel = activeFile ? getLanguageLabel(activeFile.name) : "Plain Text";
 
   return (
-    <div className="flex flex-col w-full h-full bg-slate-900 overflow-hidden">
+    <div className="flex flex-col w-full h-full bg-[#0c0c0e] overflow-hidden">
       {/* Editor Body */}
       <div ref={containerRef} className="flex-1 w-full h-full overflow-hidden" />
 
       {/* VS Code-style Status Bar */}
-      <div className="flex items-center justify-between px-3 h-6 bg-slate-950 border-t border-slate-800 text-[11px] text-slate-400 select-none shrink-0 font-mono">
+      <div className="flex items-center justify-between px-3 h-6 bg-[#121214] border-t border-zinc-800/80 text-[11px] text-zinc-400 select-none shrink-0 font-mono">
         {/* Left: Path Breadcrumb & Sync Status */}
         <div className="flex items-center gap-3 truncate">
-          <span className="text-slate-300 font-sans truncate" title={breadcrumbPath}>
+          <span className="text-zinc-400 font-sans truncate" title={breadcrumbPath}>
             {breadcrumbPath}
           </span>
           <div className="flex items-center gap-1 text-[10px]">
             {isSaved ? (
-              <span className="flex items-center gap-1 text-emerald-400">
-                <Check className="w-3 h-3" />
-                <span className="hidden sm:inline">Saved in MongoDB</span>
+              <span className="flex items-center gap-1 text-zinc-400">
+                <Check className="w-3 h-3 text-zinc-400" />
+                <span className="hidden sm:inline">Synced</span>
               </span>
             ) : (
-              <span className="flex items-center gap-1 text-amber-400 animate-pulse">
+              <span className="flex items-center gap-1 text-zinc-400 animate-pulse">
                 <Cloud className="w-3 h-3" />
                 <span className="hidden sm:inline">Saving...</span>
               </span>
@@ -487,7 +487,7 @@ export default function EditorPanel({
         {/* Right: Language, Cursor position, Indentation */}
         <div className="flex items-center gap-4 shrink-0">
           {isReadOnly && (
-            <span className="text-[10px] text-amber-400 bg-amber-500/10 px-1.5 py-0.2 rounded font-sans font-semibold border border-amber-500/20">
+            <span className="text-[10px] text-zinc-400 bg-zinc-800/80 px-1.5 py-0.2 rounded font-sans border border-zinc-700">
               Read-Only
             </span>
           )}
@@ -496,7 +496,7 @@ export default function EditorPanel({
           </span>
           <span className="hidden md:inline">Spaces: 2</span>
           <span className="hidden md:inline">UTF-8</span>
-          <span className="text-sky-400 font-sans font-medium">
+          <span className="text-zinc-300 font-sans font-medium">
             {languageLabel}
           </span>
         </div>

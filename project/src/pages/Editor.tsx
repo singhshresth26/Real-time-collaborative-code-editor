@@ -980,11 +980,11 @@ export default function EditorPage() {
   const isReadOnly = userRole === "viewer" || pairRole === "navigator";
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-slate-950 font-sans select-none">
-      {/* VS Code Activity Bar (Leftmost Icon Rail) */}
-      <div className="w-12 bg-slate-950 border-r border-slate-800 flex flex-col items-center justify-between py-2 shrink-0 z-20">
+    <div className="flex h-screen w-screen overflow-hidden bg-[#0c0c0e] font-sans select-none text-zinc-200">
+      {/* VS Code / Cursor Style Activity Bar */}
+      <div className="w-12 bg-[#121214] border-r border-zinc-800/80 flex flex-col items-center justify-between py-2 shrink-0 z-20">
         {/* Primary Feature Tabs */}
-        <div className="flex flex-col items-center gap-1.5 w-full">
+        <div className="flex flex-col items-center gap-1 w-full px-1.5">
           {/* 1. File Explorer */}
           <button
             type="button"
@@ -992,8 +992,8 @@ export default function EditorPage() {
             onClick={() => setSidebarTab("explorer")}
             className={`w-9 h-9 rounded-md flex items-center justify-center transition relative ${
               sidebarTab === "explorer"
-                ? "bg-slate-800 text-sky-400 border-l-2 border-sky-400"
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
+                ? "bg-zinc-800/90 text-zinc-100 shadow-sm before:absolute before:-left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-zinc-200 before:rounded-r"
+                : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50"
             }`}
           >
             <Files className="w-4 h-4" />
@@ -1009,13 +1009,13 @@ export default function EditorPage() {
             }}
             className={`w-9 h-9 rounded-md flex items-center justify-center transition relative ${
               sidebarTab === "chat"
-                ? "bg-slate-800 text-sky-400 border-l-2 border-sky-400"
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
+                ? "bg-zinc-800/90 text-zinc-100 shadow-sm before:absolute before:-left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-zinc-200 before:rounded-r"
+                : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50"
             }`}
           >
             <MessageSquare className="w-4 h-4" />
             {unreadChatCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-rose-500 text-white text-[9px] font-bold rounded-full flex items-center justify-center animate-pulse">
+              <span className="absolute top-1 right-1 w-3.5 h-3.5 bg-zinc-600 text-zinc-100 text-[9px] font-bold rounded-full flex items-center justify-center">
                 {unreadChatCount}
               </span>
             )}
@@ -1028,8 +1028,8 @@ export default function EditorPage() {
             onClick={() => setSidebarTab("history")}
             className={`w-9 h-9 rounded-md flex items-center justify-center transition relative ${
               sidebarTab === "history"
-                ? "bg-slate-800 text-sky-400 border-l-2 border-sky-400"
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
+                ? "bg-zinc-800/90 text-zinc-100 shadow-sm before:absolute before:-left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-zinc-200 before:rounded-r"
+                : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50"
             }`}
           >
             <History className="w-4 h-4" />
@@ -1042,8 +1042,8 @@ export default function EditorPage() {
             onClick={() => setSidebarTab("github")}
             className={`w-9 h-9 rounded-md flex items-center justify-center transition relative ${
               sidebarTab === "github"
-                ? "bg-slate-800 text-sky-400 border-l-2 border-sky-400"
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
+                ? "bg-zinc-800/90 text-zinc-100 shadow-sm before:absolute before:-left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-zinc-200 before:rounded-r"
+                : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50"
             }`}
           >
             <FolderGit2 className="w-4 h-4" />
@@ -1056,8 +1056,8 @@ export default function EditorPage() {
             onClick={() => setSidebarTab("activity")}
             className={`w-9 h-9 rounded-md flex items-center justify-center transition relative ${
               sidebarTab === "activity"
-                ? "bg-slate-800 text-sky-400 border-l-2 border-sky-400"
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
+                ? "bg-zinc-800/90 text-zinc-100 shadow-sm before:absolute before:-left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-zinc-200 before:rounded-r"
+                : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50"
             }`}
           >
             <ActivityIcon className="w-4 h-4" />
@@ -1070,13 +1070,13 @@ export default function EditorPage() {
             onClick={() => setSidebarTab("review")}
             className={`w-9 h-9 rounded-md flex items-center justify-center transition relative ${
               sidebarTab === "review"
-                ? "bg-slate-800 text-sky-400 border-l-2 border-sky-400"
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
+                ? "bg-zinc-800/90 text-zinc-100 shadow-sm before:absolute before:-left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-zinc-200 before:rounded-r"
+                : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50"
             }`}
           >
             <MessageSquareCode className="w-4 h-4" />
             {codeComments.filter((c) => !c.resolved).length > 0 && (
-              <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-sky-500 text-slate-950 text-[9px] font-bold rounded-full flex items-center justify-center">
+              <span className="absolute top-1 right-1 w-3.5 h-3.5 bg-zinc-600 text-zinc-100 text-[9px] font-bold rounded-full flex items-center justify-center">
                 {codeComments.filter((c) => !c.resolved).length}
               </span>
             )}
@@ -1089,11 +1089,11 @@ export default function EditorPage() {
             onClick={() => setSidebarTab("interview")}
             className={`w-9 h-9 rounded-md flex items-center justify-center transition relative ${
               sidebarTab === "interview"
-                ? "bg-slate-800 text-sky-400 border-l-2 border-sky-400"
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
+                ? "bg-zinc-800/90 text-zinc-100 shadow-sm before:absolute before:-left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-zinc-200 before:rounded-r"
+                : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50"
             }`}
           >
-            <Briefcase className="w-4 h-4 text-amber-400" />
+            <Briefcase className="w-4 h-4" />
           </button>
 
           {/* 8. Shared Debugger */}
@@ -1103,13 +1103,13 @@ export default function EditorPage() {
             onClick={() => setSidebarTab("debugger")}
             className={`w-9 h-9 rounded-md flex items-center justify-center transition relative ${
               sidebarTab === "debugger"
-                ? "bg-slate-800 text-sky-400 border-l-2 border-sky-400"
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
+                ? "bg-zinc-800/90 text-zinc-100 shadow-sm before:absolute before:-left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-zinc-200 before:rounded-r"
+                : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50"
             }`}
           >
-            <Bug className="w-4 h-4 text-rose-400" />
+            <Bug className="w-4 h-4" />
             {breakpoints.length > 0 && (
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-rose-500 rounded-full" />
+              <span className="absolute top-1 right-1 w-2 h-2 bg-rose-400 rounded-full" />
             )}
           </button>
 
@@ -1120,13 +1120,13 @@ export default function EditorPage() {
             onClick={() => setSidebarTab("collaborators")}
             className={`w-9 h-9 rounded-md flex items-center justify-center transition relative ${
               sidebarTab === "collaborators"
-                ? "bg-slate-800 text-sky-400 border-l-2 border-sky-400"
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
+                ? "bg-zinc-800/90 text-zinc-100 shadow-sm before:absolute before:-left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-zinc-200 before:rounded-r"
+                : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50"
             }`}
           >
             <UsersIcon className="w-4 h-4" />
             {users.length > 0 && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-500 text-slate-950 text-[10px] font-bold rounded-full flex items-center justify-center">
+              <span className="absolute top-1 right-1 w-3.5 h-3.5 bg-zinc-700 text-zinc-200 text-[10px] font-medium rounded-full flex items-center justify-center border border-zinc-600">
                 {users.length}
               </span>
             )}
@@ -1142,22 +1142,22 @@ export default function EditorPage() {
             }}
             className={`w-9 h-9 rounded-md flex items-center justify-center transition ${
               isTerminalOpen
-                ? "bg-slate-800 text-sky-400 border-l-2 border-sky-400"
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
+                ? "bg-zinc-800 text-zinc-100"
+                : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50"
             }`}
           >
             <TerminalIcon className="w-4 h-4" />
           </button>
         </div>
 
-        {/* Bottom Utility Modals & Actions */}
-        <div className="flex flex-col items-center gap-2 w-full pt-2 border-t border-slate-900">
+        {/* Bottom Utility Actions */}
+        <div className="flex flex-col items-center gap-1.5 w-full pt-2 border-t border-zinc-800/80 px-1.5">
           {/* Whiteboard Modal Toggle */}
           <button
             type="button"
             title="Collaborative Whiteboard"
             onClick={() => setIsWhiteboardOpen(true)}
-            className="w-8 h-8 rounded flex items-center justify-center text-slate-400 hover:text-sky-400 hover:bg-slate-900 transition"
+            className="w-8 h-8 rounded-md flex items-center justify-center text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/50 transition"
           >
             <Palette className="w-4 h-4" />
           </button>
@@ -1167,7 +1167,7 @@ export default function EditorPage() {
             type="button"
             title="Voice & Video Calling"
             onClick={() => setIsVideoCallOpen(true)}
-            className="w-8 h-8 rounded flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:bg-slate-900 transition"
+            className="w-8 h-8 rounded-md flex items-center justify-center text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/50 transition"
           >
             <PhoneCall className="w-4 h-4" />
           </button>
@@ -1177,7 +1177,7 @@ export default function EditorPage() {
             type="button"
             title="Room Permissions & Roles"
             onClick={() => setIsPermissionsOpen(true)}
-            className="w-8 h-8 rounded flex items-center justify-center text-slate-400 hover:text-amber-400 hover:bg-slate-900 transition"
+            className="w-8 h-8 rounded-md flex items-center justify-center text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/50 transition"
           >
             <ShieldCheck className="w-4 h-4" />
           </button>
@@ -1187,23 +1187,13 @@ export default function EditorPage() {
             type="button"
             title="Session Recording & Replay"
             onClick={() => setIsReplayOpen(true)}
-            className={`w-8 h-8 rounded flex items-center justify-center transition ${
+            className={`w-8 h-8 rounded-md flex items-center justify-center transition ${
               isRecording
-                ? "text-rose-400 bg-rose-500/20"
-                : "text-slate-400 hover:text-purple-400 hover:bg-slate-900"
+                ? "text-rose-400 bg-rose-500/10 border border-rose-500/20"
+                : "text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/50"
             }`}
           >
             <Video className="w-4 h-4" />
-          </button>
-
-          {/* Copy Room ID */}
-          <button
-            type="button"
-            title="Copy Room ID"
-            onClick={copyRoomId}
-            className="w-8 h-8 rounded flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-900 transition"
-          >
-            <Copy className="w-3.5 h-3.5" />
           </button>
 
           {/* Leave Room */}
@@ -1211,7 +1201,7 @@ export default function EditorPage() {
             type="button"
             title="Leave Room"
             onClick={leaveRoom}
-            className="w-8 h-8 rounded flex items-center justify-center text-red-400 hover:text-red-300 hover:bg-red-500/10 transition"
+            className="w-8 h-8 rounded-md flex items-center justify-center text-zinc-400 hover:text-rose-400 hover:bg-rose-500/10 transition"
           >
             <LogOut className="w-3.5 h-3.5" />
           </button>
@@ -1219,7 +1209,7 @@ export default function EditorPage() {
       </div>
 
       {/* Primary Sidebar Panels */}
-      <div className="w-64 sm:w-72 bg-slate-900 flex flex-col border-r border-slate-800 shrink-0">
+      <div className="w-64 sm:w-72 bg-[#121214] flex flex-col border-r border-zinc-800/80 shrink-0">
         {sidebarTab === "explorer" && (
           <FileExplorer
             files={files}
@@ -1346,11 +1336,11 @@ export default function EditorPage() {
         )}
 
         {sidebarTab === "collaborators" && (
-          <div className="flex flex-col h-full bg-slate-900">
+          <div className="flex flex-col h-full bg-[#121214]">
             {/* Collaborators Header */}
-            <div className="flex items-center justify-between px-3 py-2.5 border-b border-slate-800 bg-slate-950/40">
-              <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-slate-300 uppercase">
-                <UsersIcon className="w-4 h-4 text-sky-400" />
+            <div className="flex items-center justify-between px-3 py-2.5 border-b border-zinc-800/80 bg-[#141417]">
+              <div className="flex items-center gap-2 text-xs font-medium tracking-wider text-zinc-300 uppercase">
+                <UsersIcon className="w-4 h-4 text-zinc-400" />
                 <span>Room Members ({users.length})</span>
               </div>
             </div>
@@ -1366,28 +1356,28 @@ export default function EditorPage() {
                 return (
                   <div
                     key={user.socketId}
-                    className="flex items-center justify-between p-2 rounded-lg bg-slate-950/60 border border-slate-800"
+                    className="flex items-center justify-between p-2 rounded-lg bg-[#18181b] border border-zinc-800"
                   >
                     <div className="flex items-center gap-2">
                       <Users username={user.username} />
                       <div>
-                        <div className="text-xs font-medium text-slate-200 flex items-center gap-1.5">
+                        <div className="text-xs font-medium text-zinc-200 flex items-center gap-1.5">
                           {user.username}
                           {isCurrent && (
-                            <span className="text-[10px] text-sky-400 bg-sky-500/10 px-1 rounded">
+                            <span className="text-[10px] text-zinc-400 bg-zinc-800 px-1.5 py-0.2 rounded border border-zinc-700">
                               you
                             </span>
                           )}
                         </div>
-                        <div className="flex items-center gap-1.5 text-[10px] text-slate-400 mt-0.5">
-                          <span className="uppercase text-slate-500">{role}</span>
+                        <div className="flex items-center gap-1.5 text-[10px] text-zinc-400 mt-0.5">
+                          <span className="uppercase text-zinc-500">{role}</span>
                           <span>•</span>
-                          <span className="text-emerald-400 uppercase">{currentPair}</span>
+                          <span className="text-zinc-300 uppercase">{currentPair}</span>
                         </div>
                         {viewingFile && (
-                          <div className="text-[11px] text-slate-400 flex items-center gap-1 mt-0.5 truncate max-w-[120px]">
-                            <span>Viewing:</span>
-                            <span className="text-sky-300 font-mono truncate">
+                          <div className="text-[11px] text-zinc-400 flex items-center gap-1 mt-0.5 truncate max-w-[140px]">
+                            <span className="text-zinc-500">Viewing:</span>
+                            <span className="text-zinc-300 font-mono truncate">
                               {viewingFile.name}
                             </span>
                           </div>
@@ -1401,11 +1391,11 @@ export default function EditorPage() {
             </div>
 
             {/* Quick Action Footer in Sidebar */}
-            <div className="p-3 border-t border-slate-800 flex flex-col gap-2 bg-slate-950/40">
+            <div className="p-3 border-t border-zinc-800/80 flex flex-col gap-2 bg-[#141417]">
               <button
                 type="button"
                 onClick={copyRoomId}
-                className="w-full flex items-center justify-center gap-2 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 py-2 rounded-md transition border border-slate-700"
+                className="w-full flex items-center justify-center gap-2 text-xs font-medium bg-zinc-800 hover:bg-zinc-700 text-zinc-200 py-2 rounded-md transition border border-zinc-700"
               >
                 <Copy className="w-3.5 h-3.5" />
                 <span>Copy Room ID</span>
@@ -1413,7 +1403,7 @@ export default function EditorPage() {
               <button
                 type="button"
                 onClick={leaveRoom}
-                className="w-full flex items-center justify-center gap-2 text-xs font-semibold bg-red-600/80 hover:bg-red-600 text-white py-2 rounded-md transition shadow"
+                className="w-full flex items-center justify-center gap-2 text-xs font-medium bg-zinc-900 hover:bg-rose-950/40 text-rose-300 hover:text-rose-200 py-2 rounded-md transition border border-zinc-800 hover:border-rose-900/50"
               >
                 <LogOut className="w-3.5 h-3.5" />
                 <span>Leave Room</span>
@@ -1424,38 +1414,37 @@ export default function EditorPage() {
       </div>
 
       {/* Main Work Area */}
-      <div className="flex-1 flex flex-col h-full overflow-hidden bg-slate-900">
-        {/* Top Floating Notification / Role / Follow Me Banner */}
-        <div className="h-8 bg-slate-950/90 border-b border-slate-800 px-3 flex items-center justify-between text-xs">
-          {/* Left: Role & Pair Programming Indicator */}
-          <div className="flex items-center gap-2.5">
-            <span className="flex items-center gap-1 text-[11px] font-mono text-slate-300">
-              <span>Role:</span>
-              <strong className={`uppercase ${userRole === "owner" ? "text-amber-400" : userRole === "viewer" ? "text-rose-400" : "text-sky-400"}`}>
-                {userRole}
-              </strong>
-              {roomOwner && (
-                <span className="text-[10px] text-slate-500 font-sans hidden md:inline">
-                  (Owner: {roomOwner})
-                </span>
-              )}
+      <div className="flex-1 flex flex-col h-full overflow-hidden bg-[#0c0c0e]">
+        {/* Top Header Bar */}
+        <div className="h-8 bg-[#121214] border-b border-zinc-800/80 px-3 flex items-center justify-between text-xs">
+          {/* Left: Clean Workspace Breadcrumb & Share */}
+          <div className="flex items-center gap-2 text-zinc-400 text-xs font-mono">
+            <span className="text-zinc-500 font-sans text-[11px]">workspace</span>
+            <span className="text-zinc-700 font-sans">/</span>
+            <span className="text-zinc-200 font-medium text-[11px]">{roomId}</span>
+            <button
+              onClick={copyRoomId}
+              title="Copy Room ID"
+              className="p-1 hover:text-zinc-100 hover:bg-zinc-800 rounded transition text-zinc-500"
+            >
+              <Copy className="w-3 h-3" />
+            </button>
+          </div>
+
+          {/* Center: Clean Segmented Role Indicator */}
+          <div
+            title={roomOwner ? `Room Owner: ${roomOwner}` : undefined}
+            className="flex items-center gap-2 bg-[#18181b] border border-zinc-800 px-2.5 py-0.5 rounded-full text-[11px]"
+          >
+            <span className="flex items-center gap-1.5 text-zinc-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span className="font-mono uppercase font-semibold text-zinc-200">{userRole}</span>
             </span>
-
-            <span className="text-slate-700">|</span>
-
-            <span className="flex items-center gap-1 text-[11px] font-mono">
-              <span className="text-slate-400">Pair:</span>
-              <strong className={`uppercase ${pairRole === "driver" ? "text-emerald-400" : "text-purple-400"}`}>
-                {pairRole}
-              </strong>
-              {pairRole === "navigator" && (
-                <span className="text-[10px] text-slate-500 font-sans">(Read-Only)</span>
-              )}
-            </span>
-
+            <span className="text-zinc-700">•</span>
+            <span className="text-zinc-400 font-mono capitalize">{pairRole}</span>
             {isReadOnly && (
-              <span className="text-[10px] bg-rose-500/10 text-rose-400 px-1.5 py-0.5 rounded border border-rose-500/20 font-semibold">
-                Viewing Mode
+              <span className="text-[10px] bg-zinc-800 text-zinc-400 px-1.5 py-0.2 rounded border border-zinc-700">
+                Read-only
               </span>
             )}
           </div>
@@ -1466,18 +1455,18 @@ export default function EditorPage() {
               activeLeaderName === username ? (
                 <button
                   onClick={toggleLeadSession}
-                  className="flex items-center gap-1 text-[11px] bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 px-2 py-0.5 rounded-full border border-amber-500/30 transition animate-pulse"
+                  className="flex items-center gap-1.5 text-[11px] bg-zinc-800 hover:bg-zinc-700 text-amber-300 px-2.5 py-0.5 rounded-md border border-amber-500/30 transition"
                 >
-                  <Radio className="w-3 h-3 text-amber-400" />
-                  <span>You are Leading Session (Stop)</span>
+                  <Radio className="w-3 h-3 text-amber-400 animate-pulse" />
+                  <span>Leading Session</span>
                 </button>
               ) : (
                 <button
                   onClick={toggleFollowMode}
-                  className={`flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full border transition ${
+                  className={`flex items-center gap-1.5 text-[11px] px-2.5 py-0.5 rounded-md border transition ${
                     isFollowLeader
-                      ? "bg-sky-500/20 border-sky-500/30 text-sky-300 font-semibold"
-                      : "bg-slate-800 border-slate-700 text-slate-400 hover:text-white"
+                      ? "bg-zinc-800 border-zinc-700 text-zinc-100 font-medium"
+                      : "bg-[#18181b] border-zinc-800 text-zinc-400 hover:text-zinc-200"
                   }`}
                 >
                   <Eye className="w-3 h-3" />
@@ -1487,7 +1476,7 @@ export default function EditorPage() {
             ) : (
               <button
                 onClick={toggleLeadSession}
-                className="flex items-center gap-1 text-[11px] text-slate-400 hover:text-sky-300 hover:bg-slate-900 px-2 py-0.5 rounded transition"
+                className="flex items-center gap-1.5 text-[11px] text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800 px-2 py-0.5 rounded transition"
                 title="Lead others: their editors will follow your navigation"
               >
                 <Radio className="w-3 h-3" />

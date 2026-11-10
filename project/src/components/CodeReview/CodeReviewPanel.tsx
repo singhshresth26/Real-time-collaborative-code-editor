@@ -106,16 +106,16 @@ export const CodeReviewPanel: React.FC<CodeReviewPanelProps> = ({
   };
 
   return (
-    <div className="flex flex-col h-full bg-slate-900 border-r border-slate-800 text-slate-200">
+    <div className="flex flex-col h-full bg-[#121214] border-r border-zinc-800 text-zinc-200">
       {/* Header */}
-      <div className="flex items-center justify-between px-3 py-2.5 border-b border-slate-800 bg-slate-950/40">
-        <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-sky-400 uppercase">
-          <MessageSquareCode className="w-4 h-4 text-sky-400" />
+      <div className="flex items-center justify-between px-3 py-2.5 border-b border-zinc-800 bg-[#141417]">
+        <div className="flex items-center gap-2 text-xs font-medium tracking-wider text-zinc-300 uppercase">
+          <MessageSquareCode className="w-4 h-4 text-zinc-400" />
           <span>Code Review</span>
         </div>
         <button
           onClick={() => setShowAddForm((prev) => !prev)}
-          className="flex items-center gap-1 text-[11px] font-medium bg-sky-600 hover:bg-sky-500 text-white px-2 py-0.5 rounded transition shadow"
+          className="flex items-center gap-1 text-[11px] font-medium bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 px-2 py-0.5 rounded transition"
         >
           <Plus className="w-3.5 h-3.5" />
           <span>Add</span>
@@ -123,13 +123,13 @@ export const CodeReviewPanel: React.FC<CodeReviewPanelProps> = ({
       </div>
 
       {/* Filter Toolbar */}
-      <div className="p-2 border-b border-slate-800/80 bg-slate-950/20 flex items-center justify-between text-xs">
+      <div className="p-2 border-b border-zinc-800 bg-[#161619] flex items-center justify-between text-xs">
         <div className="flex items-center gap-1.5">
-          <Filter className="w-3.5 h-3.5 text-slate-500" />
+          <Filter className="w-3.5 h-3.5 text-zinc-500" />
           <button
             onClick={() => setFilterResolved("open")}
             className={`px-1.5 py-0.5 rounded text-[11px] font-medium transition ${
-              filterResolved === "open" ? "bg-slate-800 text-sky-400 font-bold" : "text-slate-500"
+              filterResolved === "open" ? "bg-zinc-800 text-zinc-100 font-medium" : "text-zinc-500"
             }`}
           >
             Open

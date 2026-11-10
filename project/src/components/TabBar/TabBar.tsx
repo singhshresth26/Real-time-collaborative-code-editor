@@ -33,7 +33,7 @@ export const TabBar: React.FC<TabBarProps> = ({
   onToggleTerminal,
 }) => {
   return (
-    <div className="flex items-center justify-between bg-slate-950/80 border-b border-slate-800 select-none h-9 text-xs shrink-0 overflow-hidden">
+    <div className="flex items-center justify-between bg-[#121214] border-b border-zinc-800 select-none h-9 text-xs shrink-0 overflow-hidden">
       {/* Scrollable Tabs List */}
       <div className="flex items-center h-full overflow-x-auto no-scrollbar flex-1">
         {openTabIds.map((fileId) => {
@@ -56,10 +56,10 @@ export const TabBar: React.FC<TabBarProps> = ({
                   onCloseTab(file.id);
                 }
               }}
-              className={`group flex items-center h-full px-3 gap-2 cursor-pointer transition-colors border-r border-slate-800/80 shrink-0 max-w-[200px] relative ${
+              className={`group flex items-center h-full px-3 gap-2 cursor-pointer transition-colors border-r border-zinc-800 shrink-0 max-w-[200px] relative ${
                 isActive
-                  ? "bg-slate-800 text-white font-medium border-t-2 border-t-sky-400"
-                  : "bg-slate-900/60 text-slate-400 hover:bg-slate-850 hover:text-slate-200"
+                  ? "bg-[#1e1e22] text-zinc-100 font-medium border-t-2 border-t-zinc-200"
+                  : "bg-[#141417] text-zinc-400 hover:bg-[#1a1a1e] hover:text-zinc-200"
               }`}
             >
               {/* File Icon */}
@@ -79,7 +79,7 @@ export const TabBar: React.FC<TabBarProps> = ({
                     <span
                       key={user.socketId}
                       title={`${user.username} is viewing this file`}
-                      className="w-2 h-2 rounded-full bg-emerald-400 ring-1 ring-slate-900"
+                      className="w-2 h-2 rounded-full bg-emerald-400 ring-1 ring-zinc-900"
                     />
                   ))}
                 </div>
@@ -93,8 +93,8 @@ export const TabBar: React.FC<TabBarProps> = ({
                   e.stopPropagation();
                   onCloseTab(file.id);
                 }}
-                className={`p-0.5 rounded-sm hover:bg-slate-700/80 hover:text-white transition shrink-0 ${
-                  isActive ? "text-slate-300" : "text-slate-500 opacity-60 group-hover:opacity-100"
+                className={`p-0.5 rounded hover:bg-zinc-700/80 hover:text-zinc-100 transition shrink-0 ${
+                  isActive ? "text-zinc-300" : "text-zinc-500 opacity-40 group-hover:opacity-100"
                 }`}
               >
                 <X className="w-3.5 h-3.5" />
@@ -108,14 +108,14 @@ export const TabBar: React.FC<TabBarProps> = ({
           type="button"
           title="New File"
           onClick={onNewFileClick}
-          className="p-1.5 ml-1 text-slate-400 hover:text-white hover:bg-slate-800/60 rounded transition shrink-0"
+          className="p-1.5 ml-1 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/60 rounded transition shrink-0"
         >
           <Plus className="w-3.5 h-3.5" />
         </button>
       </div>
 
       {/* Right Actions: Run Code & Toggle Terminal */}
-      <div className="flex items-center gap-1.5 px-2 shrink-0 bg-slate-950">
+      <div className="flex items-center gap-1.5 px-2 shrink-0 bg-[#121214]">
         {/* Toggle Terminal Button */}
         {onToggleTerminal && (
           <button
@@ -124,8 +124,8 @@ export const TabBar: React.FC<TabBarProps> = ({
             onClick={onToggleTerminal}
             className={`p-1.5 rounded transition flex items-center gap-1 text-xs ${
               isTerminalOpen
-                ? "bg-slate-800 text-sky-400 border border-slate-700"
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-900"
+                ? "bg-zinc-800 text-zinc-200 border border-zinc-700"
+                : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/60"
             }`}
           >
             <TerminalIcon className="w-3.5 h-3.5" />
@@ -139,9 +139,9 @@ export const TabBar: React.FC<TabBarProps> = ({
             title="Run Code (Ctrl + Enter)"
             onClick={onRunCode}
             disabled={isRunning}
-            className={`flex items-center gap-1.5 px-3 py-1 rounded text-xs font-semibold shadow-sm transition ${
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium shadow-xs transition ${
               isRunning
-                ? "bg-amber-600/80 text-amber-100 cursor-not-allowed animate-pulse"
+                ? "bg-zinc-700 text-zinc-300 cursor-not-allowed animate-pulse"
                 : "bg-emerald-600 hover:bg-emerald-500 text-white cursor-pointer active:scale-95"
             }`}
           >

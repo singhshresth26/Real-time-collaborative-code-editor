@@ -138,8 +138,8 @@ export const FileTreeItem: React.FC<FileTreeItemProps> = ({
       <div
         className={`group flex items-center h-7 px-1 rounded-sm cursor-pointer transition-colors relative ${
           isActive
-            ? "bg-slate-700/80 text-white font-medium border-l-2 border-sky-400 pl-[calc(0.25rem-2px)]"
-            : "hover:bg-slate-800/60 text-slate-300 hover:text-white"
+            ? "bg-[#232328] text-zinc-100 font-medium border-l-2 border-zinc-200 pl-[calc(0.25rem-2px)]"
+            : "hover:bg-[#19191d] text-zinc-400 hover:text-zinc-200"
         }`}
         style={{ paddingLeft: `${depth * 14 + 6}px` }}
         onClick={(e) => {
@@ -154,7 +154,7 @@ export const FileTreeItem: React.FC<FileTreeItemProps> = ({
         {/* Folder expand chevron or spacing */}
         {isFolder ? (
           <span
-            className="w-4 h-4 flex items-center justify-center shrink-0 mr-0.5 text-slate-400 hover:text-white"
+            className="w-4 h-4 flex items-center justify-center shrink-0 mr-0.5 text-zinc-400 hover:text-zinc-200"
             onClick={(e) => {
               e.stopPropagation();
               toggleFolder(item.id);
@@ -189,7 +189,7 @@ export const FileTreeItem: React.FC<FileTreeItemProps> = ({
             onKeyDown={handleRenameKeyDown}
             onBlur={handleRenameSubmit}
             onClick={(e) => e.stopPropagation()}
-            className="bg-slate-900 text-sky-300 border border-sky-500 rounded px-1 py-0 text-xs outline-none flex-1 max-w-[140px]"
+            className="bg-[#18181b] text-zinc-100 border border-zinc-700 rounded px-1 py-0 text-xs outline-none flex-1 max-w-[140px]"
           />
         ) : (
           <span className="truncate flex-1" title={item.name}>

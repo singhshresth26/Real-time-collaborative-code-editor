@@ -77,14 +77,14 @@ export const DebuggerPanel: React.FC<DebuggerPanelProps> = ({
   };
 
   return (
-    <div className="flex flex-col h-full bg-slate-900 border-r border-slate-800 text-slate-200">
+    <div className="flex flex-col h-full bg-[#121214] border-r border-zinc-800 text-zinc-200">
       {/* Header */}
-      <div className="flex items-center justify-between px-3 py-2.5 border-b border-slate-800 bg-slate-950/40">
-        <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-rose-400 uppercase">
-          <Bug className="w-4 h-4 text-rose-400" />
-          <span>Shared Debugger</span>
+      <div className="flex items-center justify-between px-3 py-2.5 border-b border-zinc-800 bg-[#141417]">
+        <div className="flex items-center gap-2 text-xs font-medium tracking-wider text-zinc-300 uppercase">
+          <Bug className="w-4 h-4 text-zinc-400" />
+          <span>Debugger</span>
         </div>
-        <span className="text-[11px] font-mono text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded">
+        <span className="text-[11px] font-mono text-zinc-400 bg-[#18181b] border border-zinc-800 px-2 py-0.5 rounded">
           {breakpoints.length} Breakpoints
         </span>
       </div>

@@ -255,15 +255,15 @@ export const InterviewPanel: React.FC<InterviewPanelProps> = ({
   };
 
   return (
-    <div className="flex flex-col h-full bg-slate-900 border-r border-slate-800 text-slate-200">
+    <div className="flex flex-col h-full bg-[#121214] border-r border-zinc-800 text-zinc-200">
       {/* Header */}
-      <div className="flex items-center justify-between px-3 py-2.5 border-b border-slate-800 bg-slate-950/40">
-        <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-sky-400 uppercase">
-          <Briefcase className="w-4 h-4 text-sky-400" />
-          <span>Interview Mode</span>
+      <div className="flex items-center justify-between px-3 py-2.5 border-b border-zinc-800 bg-[#141417]">
+        <div className="flex items-center gap-2 text-xs font-medium tracking-wider text-zinc-300 uppercase">
+          <Briefcase className="w-4 h-4 text-zinc-400" />
+          <span>Interview</span>
         </div>
-        <div className="flex items-center gap-1.5 font-mono text-xs font-bold text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-          <Clock className="w-3.5 h-3.5 text-amber-400" />
+        <div className="flex items-center gap-1.5 font-mono text-xs font-medium text-zinc-300 bg-[#18181b] px-2 py-0.5 rounded border border-zinc-800">
+          <Clock className="w-3.5 h-3.5 text-zinc-400" />
           <span>{formatTimer(session.remainingSeconds)}</span>
         </div>
       </div>

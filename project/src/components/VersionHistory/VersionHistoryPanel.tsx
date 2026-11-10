@@ -55,17 +55,17 @@ export const VersionHistoryPanel: React.FC<VersionHistoryPanelProps> = ({
   };
 
   return (
-    <div className="flex flex-col h-full bg-slate-900 border-r border-slate-800 text-white select-none">
+    <div className="flex flex-col h-full bg-[#121214] border-r border-zinc-800 text-zinc-100 select-none">
       {/* Header */}
-      <div className="flex items-center justify-between px-3 py-2.5 border-b border-slate-800 shrink-0">
-        <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-slate-300 uppercase">
-          <History className="w-4 h-4 text-sky-400" />
+      <div className="flex items-center justify-between px-3 py-2.5 border-b border-zinc-800 shrink-0 bg-[#141417]">
+        <div className="flex items-center gap-2 text-xs font-medium tracking-wider text-zinc-300 uppercase">
+          <History className="w-4 h-4 text-zinc-400" />
           <span>Snapshots ({snapshots.length})</span>
         </div>
         <button
           type="button"
           onClick={() => setIsCreating(true)}
-          className="flex items-center gap-1 text-[11px] bg-sky-500 hover:bg-sky-400 text-slate-950 px-2 py-0.5 rounded font-medium transition cursor-pointer shadow-xs"
+          className="flex items-center gap-1 text-[11px] bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border border-zinc-700 px-2 py-0.5 rounded font-medium transition cursor-pointer shadow-xs"
         >
           <Plus className="w-3.5 h-3.5" />
           <span>Checkpoint</span>
@@ -74,8 +74,8 @@ export const VersionHistoryPanel: React.FC<VersionHistoryPanelProps> = ({
 
       {/* Inline Create Snapshot Form */}
       {isCreating && (
-        <form onSubmit={handleCreateSubmit} className="p-2.5 bg-slate-950/80 border-b border-slate-800">
-          <label className="block text-[11px] text-slate-400 mb-1 font-medium">
+        <form onSubmit={handleCreateSubmit} className="p-2.5 bg-[#18181b] border-b border-zinc-800">
+          <label className="block text-[11px] text-zinc-400 mb-1 font-medium">
             Checkpoint Description:
           </label>
           <input

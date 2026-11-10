@@ -7,18 +7,18 @@ interface EmptyEditorProps {
 
 export const EmptyEditor: React.FC<EmptyEditorProps> = ({ onNewFileClick }) => {
   return (
-    <div className="flex-1 flex flex-col items-center justify-center bg-slate-900/95 text-slate-400 select-none p-6">
+    <div className="flex-1 flex flex-col items-center justify-center bg-[#0c0c0e] text-zinc-400 select-none p-6">
       <div className="max-w-md w-full flex flex-col items-center text-center space-y-6">
-        <div className="w-16 h-16 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shadow-inner">
-          <Code2 className="w-9 h-9" />
+        <div className="w-12 h-12 rounded-xl bg-[#141417] border border-zinc-800 flex items-center justify-center text-zinc-400 shadow-sm">
+          <Code2 className="w-6 h-6" />
         </div>
 
         <div>
-          <h2 className="text-xl font-semibold text-slate-200">
-            No Open Files
+          <h2 className="text-base font-medium text-zinc-200">
+            No Active Document
           </h2>
-          <p className="text-sm text-slate-500 mt-1">
-            Select a file from the explorer on the left or create a new file to start coding.
+          <p className="text-xs text-zinc-500 mt-1">
+            Select a file from the explorer or create a new file to start coding together.
           </p>
         </div>
 
@@ -26,33 +26,33 @@ export const EmptyEditor: React.FC<EmptyEditorProps> = ({ onNewFileClick }) => {
           <button
             type="button"
             onClick={onNewFileClick}
-            className="flex items-center justify-center gap-2 px-4 py-2 bg-sky-500 hover:bg-sky-400 text-slate-950 font-medium text-xs rounded-md shadow-sm transition"
+            className="flex items-center justify-center gap-2 px-3 py-1.5 bg-zinc-800 hover:bg-zinc-750 text-zinc-200 font-medium text-xs rounded-md border border-zinc-700 shadow-xs transition"
           >
-            <FilePlus className="w-4 h-4" />
-            <span>Create New File</span>
+            <FilePlus className="w-3.5 h-3.5" />
+            <span>Create File</span>
           </button>
         </div>
 
-        <div className="pt-6 border-t border-slate-800 text-xs text-slate-500 flex flex-col gap-2 w-full max-w-xs text-left">
-          <div className="flex items-center justify-between">
-            <span className="flex items-center gap-1.5">
-              <FolderTree className="w-3.5 h-3.5 text-slate-400" />
-              Browse files & folders
+        <div className="pt-5 border-t border-zinc-850 text-xs text-zinc-500 flex flex-col gap-2 w-full max-w-xs text-left">
+          <div className="flex items-center justify-between text-[11px]">
+            <span className="flex items-center gap-1.5 text-zinc-400">
+              <FolderTree className="w-3 h-3 text-zinc-500" />
+              File Tree
             </span>
-            <span className="text-[11px] font-mono text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded">
-              Sidebar
-            </span>
-          </div>
-          <div className="flex items-center justify-between">
-            <span>Multiple Editor Tabs</span>
-            <span className="text-[11px] font-mono text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded">
-              Top Bar
+            <span className="font-mono text-zinc-500 bg-[#161619] border border-zinc-800 px-1.5 py-0.5 rounded">
+              Explorer
             </span>
           </div>
-          <div className="flex items-center justify-between">
-            <span>Real-time Multi-user Sync</span>
-            <span className="text-[11px] font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-800 px-1.5 py-0.5 rounded">
-              Socket.IO
+          <div className="flex items-center justify-between text-[11px]">
+            <span className="text-zinc-400">Run Active File</span>
+            <span className="font-mono text-zinc-500 bg-[#161619] border border-zinc-800 px-1.5 py-0.5 rounded">
+              Ctrl + Enter
+            </span>
+          </div>
+          <div className="flex items-center justify-between text-[11px]">
+            <span className="text-zinc-400">Toggle Terminal</span>
+            <span className="font-mono text-zinc-500 bg-[#161619] border border-zinc-800 px-1.5 py-0.5 rounded">
+              Bottom Dock
             </span>
           </div>
         </div>

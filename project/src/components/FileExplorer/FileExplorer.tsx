@@ -163,21 +163,21 @@ export const FileExplorer: React.FC<FileExplorerProps> = ({
     });
 
   return (
-    <div className="flex flex-col h-full bg-slate-900 select-none border-r border-slate-800">
+    <div className="flex flex-col h-full bg-[#121214] select-none border-r border-zinc-800/80">
       {/* Explorer Header */}
-      <div className="flex items-center justify-between px-3 py-2 border-b border-slate-800">
-        <div className="flex items-center gap-1.5 text-xs font-semibold tracking-wider text-slate-300 uppercase">
-          <FolderTree className="w-4 h-4 text-sky-400" />
+      <div className="flex items-center justify-between px-3 py-2 border-b border-zinc-800/80">
+        <div className="flex items-center gap-1.5 text-xs font-semibold tracking-wider text-zinc-300 uppercase">
+          <FolderTree className="w-4 h-4 text-zinc-400" />
           <span>Explorer</span>
         </div>
 
         {/* Global Explorer Action Buttons */}
-        <div className="flex items-center gap-1 text-slate-400">
+        <div className="flex items-center gap-1 text-zinc-400">
           <button
             type="button"
             title="New File"
             onClick={() => startCreate(null, "file")}
-            className="p-1 hover:text-white hover:bg-slate-800 rounded transition"
+            className="p-1 hover:text-zinc-100 hover:bg-zinc-800 rounded transition"
           >
             <FilePlus className="w-3.5 h-3.5" />
           </button>
@@ -185,7 +185,7 @@ export const FileExplorer: React.FC<FileExplorerProps> = ({
             type="button"
             title="New Folder"
             onClick={() => startCreate(null, "folder")}
-            className="p-1 hover:text-white hover:bg-slate-800 rounded transition"
+            className="p-1 hover:text-zinc-100 hover:bg-zinc-800 rounded transition"
           >
             <FolderPlus className="w-3.5 h-3.5" />
           </button>
@@ -193,7 +193,7 @@ export const FileExplorer: React.FC<FileExplorerProps> = ({
             type="button"
             title="Collapse All Folders"
             onClick={collapseAllFolders}
-            className="p-1 hover:text-white hover:bg-slate-800 rounded transition"
+            className="p-1 hover:text-zinc-100 hover:bg-zinc-800 rounded transition"
           >
             <ChevronsDownUp className="w-3.5 h-3.5" />
           </button>
@@ -201,9 +201,9 @@ export const FileExplorer: React.FC<FileExplorerProps> = ({
       </div>
 
       {/* Workspace Room Name Label */}
-      <div className="px-3 py-1.5 text-[11px] font-semibold tracking-wide text-slate-400 uppercase bg-slate-950/40 flex items-center justify-between">
+      <div className="px-3 py-1.5 text-[11px] font-medium tracking-wide text-zinc-400 uppercase bg-[#161619] border-b border-zinc-800/60 flex items-center justify-between">
         <span className="truncate">WORKSPACE : {roomId ? roomId.slice(0, 8) : "PROJECT"}</span>
-        <span className="text-[10px] text-slate-500 font-normal">
+        <span className="text-[10px] text-zinc-500 font-normal">
           {files.filter((f) => f.type === "file").length} files
         </span>
       </div>
